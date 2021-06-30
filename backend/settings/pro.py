@@ -6,7 +6,7 @@ ADMINS = (
     ('Orlando C', 'orlando3d@outlook.com'),
 )
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['upssf.org', 'www.upssf.org']
 
 DATABASES = {
     'default': {
