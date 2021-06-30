@@ -151,6 +151,9 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = 'static/images'
 
+# Added for deployment using 'python manage.py collectstatic'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
 # CORS_ALLOWED_ORIGINS = [
 #     "http://localhost:3000",
 #     "http://127.0.0.1:3000"
