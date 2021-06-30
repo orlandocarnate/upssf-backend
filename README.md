@@ -28,9 +28,6 @@ AWS Amplify is used for deployment. Whenever the app's GitHub repository is upda
 * change `Officers.json` from a class component a **functional** component.
 * use useState and useEffect in `Officers.json`.
 
-### Test uWSGI
-sudo uwsgi --module=backend.wsgi:application --env=DJANGO_SETTINGS_MODULE=backend.settings.pro --master --pidfile=/tmp/project-master.pid --http=localhost:8000 --uid=1000 --virtualenv=/django-servers/venv
-
-### Run uWSGI with production settings
-DJANGO_SETTINGS_MODULE=backend.settings.pro uwsgi --http :8000 --module backend.wsgi
+### Run uWSGI using sockets
+sudo uwsgi --socket backend.sock --module backend.wsgi --chmod-socket=666
 
