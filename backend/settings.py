@@ -157,9 +157,9 @@ MEDIA_URL = '/images/'
 # Make it easer for deployment using if DEBUG true or not
 if not DEBUG:
     # Added for deployment using 'python manage.py collectstatic'
-    STATIC_ROOT = os.path.join(BASE_DIR, "/var/www/upssf.org/upssf-react-frontend/")
+    STATIC_ROOT = os.path.join(BASE_DIR, "/var/www/upssf.org/upssf-react-frontend/static/")
     # STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-    MEDIA_ROOT = '/var/www/upssf.org/upssf-react-frontend/images'
+    MEDIA_ROOT = '/var/www/upssf.org/upssf-react-frontend/static/media'
 else:
     STATICFILES_DIRS = [
         BASE_DIR / 'static'
