@@ -40,3 +40,19 @@ https://saasitive.com/tutorial/docker-compose-django-react-nginx-let-s-encrypt/
 [How to configure nginx for a RESTful API?](https://stackoverflow.com/questions/46218105/how-to-configure-nginx-for-a-restful-api)
 
 
+## Production Settings for `settings.py`
+```
+...
+DEBUG=FALSE
+
+...
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "/var/www/upssf.org/upssf-react-frontend/")
+MEDIA_ROOT = '/var/www/upssf.org/upssf-react-frontend/images'

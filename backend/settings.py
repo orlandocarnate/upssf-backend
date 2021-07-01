@@ -46,8 +46,10 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    
+    'django_quill',
 
-    'django_summernote',
+    # 'django_summernote',
 
     'base', # if this doesnt work use 'base.apps.BaseConfig'
     # 'base.apps.BaseConfig',
@@ -146,18 +148,23 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
-# if not DEBUG:
-#     # Added for deployment using 'python manage.py collectstatic'
-#     STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-# else:
-#     STATICFILES_DIRS = [
-#         BASE_DIR / 'static'
-#     ]
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static'
+# ]
 
-MEDIA_ROOT = 'static/images'
+# MEDIA_ROOT = 'static/images'
+
+# Make it easer for deployment using if DEBUG true or not
+if not DEBUG:
+    # Added for deployment using 'python manage.py collectstatic'
+    STATIC_ROOT = os.path.join(BASE_DIR, "/var/www/upssf.org/upssf-react-frontend/")
+    # STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+    MEDIA_ROOT = '/var/www/upssf.org/upssf-react-frontend/images'
+else:
+    STATICFILES_DIRS = [
+        BASE_DIR / 'static'
+    ]
+    MEDIA_ROOT = 'static/images'
 
 
 

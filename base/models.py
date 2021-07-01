@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User # import django users
 from django.urls import reverse
+from django_quill.fields import QuillField
+
 # from rest_framework.reverse import reverse
 
 # Create your models here.
@@ -37,7 +39,9 @@ class Article(models.Model):
     officer = models.ForeignKey(Officer, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=200, null = True, blank = True)
     slug = models.SlugField(null = True, blank = True, unique_for_date='publishDate')
-    body = models.TextField(null=True, blank=True)
+    # body = models.TextField(null=True, blank=True)
+    # QuillField body
+    body = QuillField(null=True, blank=True)
     createdAt = models.DateTimeField(auto_now_add=True) # created automatically
     publishDate = models.DateTimeField(default=timezone.now)
     _id = models.AutoField(primary_key=True, editable=False)
@@ -87,3 +91,7 @@ class Scholar(models.Model):
 
     def __str__(self):
         return self.name
+
+# QuillField demo model
+# class QuillPost(models.Model):
+#     content = QuillField()
