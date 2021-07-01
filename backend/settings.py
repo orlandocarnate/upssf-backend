@@ -28,9 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = True
+# DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ['upssf.org', 'www.upssf.org']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -145,14 +146,16 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
-if not DEBUG:
-    # Added for deployment using 'python manage.py collectstatic'
-    STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-
-else:
-    STATICFILES_DIRS = [
-        BASE_DIR / 'static'
-    ]
+# if not DEBUG:
+#     # Added for deployment using 'python manage.py collectstatic'
+#     STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+# else:
+#     STATICFILES_DIRS = [
+#         BASE_DIR / 'static'
+#     ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 MEDIA_ROOT = 'static/images'
 

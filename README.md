@@ -31,3 +31,12 @@ AWS Amplify is used for deployment. Whenever the app's GitHub repository is upda
 ### Run uWSGI using sockets
 sudo uwsgi --socket backend.sock --module backend.wsgi --chmod-socket=666
 
+## Running API with React
+https://saasitive.com/tutorial/docker-compose-django-react-nginx-let-s-encrypt/
+
+* Nginx upstream api
+[Setting up nginx for django rest framework](https://serverfault.com/questions/890577/setting-up-nginx-conf-for-django-rest-framework-backend-vuejs-frontend)
+
+[How to configure nginx for a RESTful API?](https://stackoverflow.com/questions/46218105/how-to-configure-nginx-for-a-restful-api)
+
+
