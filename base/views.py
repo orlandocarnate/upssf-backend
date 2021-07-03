@@ -17,7 +17,7 @@ def getRoutes(request):
 # api/articles
 @api_view(['GET'])
 def getArticles(request):
-    articles = Article.objects.all()
+    articles = Article.objects.filter(status="published")
     serializer = ArticleSerializer(articles, many=True)
     return Response(serializer.data)
 
