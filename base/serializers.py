@@ -21,7 +21,7 @@ class ArticleSerializer(serializers.ModelSerializer):
         use_natural_foreign_keys = True
         model = Article
         # fields = '__all__'
-        fields = ('_id', 'title', 'body', 'officer_name', 'publishDate', 'status', 'slug',)
+        fields = ('_id', 'title', 'content', 'officer_name', 'publishDate', 'status', 'slug',)
         # fields = ('_id', 'title', 'body', 'officer', 'publishDate', 'status', 'slug', 'get_url', 'get_absolute_url')
 
     # def get_url(self, article_post):

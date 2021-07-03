@@ -55,4 +55,6 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "/var/www/upssf.org/upssf-react-frontend/")
+
+# 
 MEDIA_ROOT = '/var/www/upssf.org/upssf-react-frontend/images'

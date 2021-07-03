@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     
-    'django_quill',
+    # 'django_quill',
+    'tinymce',
 
     # 'django_summernote',
 

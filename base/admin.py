@@ -23,7 +23,7 @@ from .models import *
 class ArticleAdmin(admin.ModelAdmin):
     # summernote_fields = ('body',)
     list_display = ('title', 'slug', 'officer', 'publishDate', 'status')
-    search_fields = ('title', 'body')
+    search_fields = ('title', 'content')
     prepopulated_fields = { 'slug': ('title',) }
     raw_id_fields = ('officer',)
     date_hierarchy = 'publishDate'
@@ -32,7 +32,7 @@ class ArticleAdmin(admin.ModelAdmin):
 # class ScholarAdmin(SummernoteModelAdmin):
 #     summernote_fields = ('body',)
 
-admin.site.register(Article, ArticleAdmin)
+admin.site.register(Article)
 # admin.site.register(Scholar, ScholarAdmin)
 # admin.site.register(Article)
 # admin.site.register(Scholar)
