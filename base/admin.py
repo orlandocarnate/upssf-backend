@@ -32,7 +32,7 @@ class ArticleAdmin(admin.ModelAdmin):
 # class ScholarAdmin(SummernoteModelAdmin):
 #     summernote_fields = ('body',)
 
-admin.site.register(Article)
+admin.site.register(Article, ArticleAdmin)
 # admin.site.register(Scholar, ScholarAdmin)
 # admin.site.register(Article)
 # admin.site.register(Scholar)
