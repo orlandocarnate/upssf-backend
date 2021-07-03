@@ -22,11 +22,12 @@ from django.conf.urls.static import static
 from filebrowser.sites import site
 
 urlpatterns = [
-    path('admin/filebrowser/', site.urls),
-    path('grappelli/', include('grappelli.urls')),
+    # path('admin/filebrowser/', site.urls),
+    # path('grappelli/', include('grappelli.urls')),
+    # path('tinymce/', include('tinymce.urls')),
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('api/', include('base.urls')),
-    path('tinymce/', include('tinymce.urls')),
     # path('summernote/', include('django_summernote.urls')),
 ]
 

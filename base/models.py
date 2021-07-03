@@ -3,7 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User # import django users
 from django.urls import reverse
 # from django_quill.fields import QuillField
-from tinymce.models import HTMLField
+# from tinymce.models import HTMLField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # from rest_framework.reverse import reverse
 
@@ -42,7 +43,7 @@ class Article(models.Model):
     slug = models.SlugField(null = True, blank = True, unique_for_date='publishDate')
     body = models.TextField(null=True, blank=True, editable=False)
     # TinyMCE body
-    content = HTMLField(null=True, blank=True)
+    content = RichTextUploadingField(null=True, blank=True)
     createdAt = models.DateTimeField(auto_now_add=True) # created automatically
     publishDate = models.DateTimeField(default=timezone.now)
     _id = models.AutoField(primary_key=True, editable=False)

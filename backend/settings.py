@@ -37,8 +37,11 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'grappelli',
-    'filebrowser',
+    # 'grappelli',
+    # 'filebrowser',
+
+    'ckeditor',
+    'ckeditor_uploader',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,7 +54,7 @@ INSTALLED_APPS = [
     'corsheaders',
     
     # 'django_quill',
-    'tinymce',
+    # 'tinymce',
 
     # 'django_summernote',
 
@@ -170,6 +173,8 @@ else:
     ]
     MEDIA_ROOT = 'static/images'
 
+# CKEDITOR
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 
 # CORS_ALLOWED_ORIGINS = [
@@ -179,20 +184,24 @@ else:
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-TINYMCE_FILEBROWSER = True # default: True if 'filebrowser' is in INSTALLED_APPS, else False
 
-TINYMCE_DEFAULT_CONFIG = {
-    "theme": "silver",
-    "height": 500,
-    "menubar": "file edit view insert format tools table help",
-    "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
-    "fullscreen insertdatetime media table paste code help wordcount spellchecker",
-    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
-    "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
-    "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
-    "fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | "
-    "a11ycheck ltr rtl | showcomments addcomment code",
-    "custom_undo_redo_levels": 10,
-}
-FILEBROWSER_DIRECTORY = ''
-DIRECTORY = ''
+
+
+# TINYMCE_FILEBROWSER = True # default: True if 'filebrowser' is in INSTALLED_APPS, else False
+
+# TINYMCE_DEFAULT_CONFIG = {
+#     "theme": "silver",
+#     "height": 500,
+#     "menubar": "file edit view insert format tools table help",
+#     "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+#     "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+#     "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
+#     "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
+#     "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
+#     "fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | "
+#     "a11ycheck ltr rtl | showcomments addcomment code",
+#     "custom_undo_redo_levels": 10,
+# }
+# FILEBROWSER_DIRECTORY = ''
+# DIRECTORY = ''
+
