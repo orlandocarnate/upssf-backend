@@ -37,6 +37,9 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
+    'filebrowser',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -176,9 +179,11 @@ else:
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+TINYMCE_FILEBROWSER = True # default: True if 'filebrowser' is in INSTALLED_APPS, else False
+
 TINYMCE_DEFAULT_CONFIG = {
-    "height": "320px",
-    "width": "960px",
+    "theme": "silver",
+    "height": 500,
     "menubar": "file edit view insert format tools table help",
     "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
     "fullscreen insertdatetime media table paste code help wordcount spellchecker",
@@ -188,5 +193,6 @@ TINYMCE_DEFAULT_CONFIG = {
     "fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | "
     "a11ycheck ltr rtl | showcomments addcomment code",
     "custom_undo_redo_levels": 10,
-    "language": "es_ES",  # To force a specific language instead of the Django current language.
 }
+FILEBROWSER_DIRECTORY = ''
+DIRECTORY = ''
